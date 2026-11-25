@@ -1,4 +1,5 @@
 import Image from "next/image";
+import { asset } from "@/lib/asset";
 
 type Props = {
   src: string;
@@ -26,12 +27,13 @@ export function SceneryHero({
   return (
     <section className="relative isolate overflow-hidden border-b border-[var(--line)]">
       <Image
-        src={src}
+        src={asset(src)}
         alt={alt}
         fill
         priority
         sizes="100vw"
         className="object-cover"
+        unoptimized
       />
       <div
         className="absolute inset-0 bg-gradient-to-r from-slate-950/88 via-slate-950/72 to-slate-950/45"

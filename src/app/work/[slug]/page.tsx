@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
+import { asset } from "@/lib/asset";
 import { CASE_STUDIES, getCase } from "@/lib/work";
 
 export function generateStaticParams() {
@@ -20,12 +21,13 @@ export default async function CasePage({
     <div>
       <div className="relative isolate min-h-[280px] overflow-hidden border-b border-[var(--line)] sm:min-h-[380px]">
         <Image
-          src={c.thumb}
+          src={asset(c.thumb)}
           alt={`Map plate — ${c.title}`}
           fill
           priority
           sizes="100vw"
           className="object-cover object-top"
+          unoptimized
         />
         <div
           className="absolute inset-0 bg-gradient-to-t from-slate-950/90 via-slate-950/40 to-slate-950/20"
@@ -57,11 +59,12 @@ export default async function CasePage({
 
         <div className="relative mt-8 overflow-hidden rounded-2xl border border-[var(--line)] bg-card shadow-sm">
           <Image
-            src={c.thumb}
+            src={asset(c.thumb)}
             alt={`Full map plate — ${c.title}`}
             width={1600}
             height={1200}
             className="h-auto w-full"
+            unoptimized
           />
         </div>
 

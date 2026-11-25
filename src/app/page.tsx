@@ -2,6 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { SceneryBand } from "@/components/SceneryBand";
 import { SceneryHero } from "@/components/SceneryHero";
+import { asset } from "@/lib/asset";
 import { ANALYSIS_PACKAGES, RETAINER } from "@/lib/services";
 import { CASE_STUDIES } from "@/lib/work";
 
@@ -98,11 +99,12 @@ export default function HomePage() {
             >
               <div className="relative aspect-[4/3] overflow-hidden bg-mist">
                 <Image
-                  src={c.thumb}
+                  src={asset(c.thumb)}
                   alt={`Map plate — ${c.title}`}
                   fill
                   sizes="(max-width: 1024px) 100vw, 33vw"
                   className="object-cover object-top transition duration-500 group-hover:scale-[1.03]"
+                  unoptimized
                 />
               </div>
               <div className="flex flex-1 flex-col p-5">
@@ -187,11 +189,12 @@ export default function HomePage() {
 
       <section className="relative isolate overflow-hidden">
         <Image
-          src="/scenery/city-dusk.jpg"
+          src={asset("/scenery/city-dusk.jpg")}
           alt="City lights at dusk"
           fill
           sizes="100vw"
           className="object-cover"
+          unoptimized
         />
         <div className="absolute inset-0 bg-slate-950/80" aria-hidden />
         <div className="relative mx-auto grid max-w-6xl gap-12 px-4 py-20 sm:px-6 lg:grid-cols-2">
@@ -251,11 +254,12 @@ export default function HomePage() {
         <div className="overflow-hidden rounded-3xl border border-[var(--line)] bg-card shadow-sm sm:grid sm:grid-cols-2">
           <div className="relative min-h-[220px] sm:min-h-full">
             <Image
-              src="/scenery/green-hills.jpg"
+              src={asset("/scenery/green-hills.jpg")}
               alt="Green rolling hills under soft light"
               fill
               sizes="(max-width: 640px) 100vw, 50vw"
               className="object-cover"
+              unoptimized
             />
           </div>
           <div className="p-8 sm:p-12">

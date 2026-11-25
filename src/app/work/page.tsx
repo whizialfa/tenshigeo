@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { SceneryHero } from "@/components/SceneryHero";
+import { asset } from "@/lib/asset";
 import { CASE_STUDIES } from "@/lib/work";
 
 export const metadata = {
@@ -30,11 +31,12 @@ export default function WorkPage() {
             >
               <div className="relative aspect-[16/10] overflow-hidden bg-mist">
                 <Image
-                  src={c.thumb}
+                  src={asset(c.thumb)}
                   alt={`Map plate — ${c.title}`}
                   fill
                   sizes="(max-width: 640px) 100vw, 50vw"
                   className="object-cover object-top transition duration-500 group-hover:scale-[1.03]"
+                  unoptimized
                 />
               </div>
               <div className="p-6">

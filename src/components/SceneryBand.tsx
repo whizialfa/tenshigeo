@@ -1,4 +1,5 @@
 import Image from "next/image";
+import { asset } from "@/lib/asset";
 
 type Props = {
   src: string;
@@ -21,11 +22,12 @@ export function SceneryBand({
   return (
     <section id="process" className="relative isolate scroll-mt-24 overflow-hidden">
       <Image
-        src={src}
+        src={asset(src)}
         alt={alt}
         fill
         sizes="100vw"
         className="object-cover"
+        unoptimized
       />
       <div
         className="absolute inset-0 bg-slate-950/75"
