@@ -32,9 +32,18 @@ yarn-error.log*
 
 # env files (can opt-in for committing if needed)
 .env*
+!.env.example
+
+# order storage + generated downloads
+/data/orders.json
+/data/requests.json
+/data/files/
 
 # vercel
 .vercel
+
+# GitHub Pages build park
+.pages-park/
 
 # typescript
 *.tsbuildinfo
