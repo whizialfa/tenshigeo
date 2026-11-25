@@ -89,6 +89,8 @@ a.tg-link-on-light:visited {
 
 html {
   scroll-behavior: smooth;
+  overflow-x: clip;
+  -webkit-text-size-adjust: 100%;
 }
 
 body {
@@ -97,9 +99,26 @@ body {
   font-family: var(--font-source-sans), "Source Sans 3", system-ui, sans-serif;
   min-height: 100%;
   line-height: 1.65;
-  font-size: 17px;
   -webkit-font-smoothing: antialiased;
   text-rendering: optimizeLegibility;
+  padding-left: env(safe-area-inset-left);
+  padding-right: env(safe-area-inset-right);
+}
+
+img,
+svg,
+video,
+canvas {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Comfortable tap targets on phones */
+@media (max-width: 640px) {
+  a,
+  button {
+    -webkit-tap-highlight-color: color-mix(in srgb, var(--sea) 18%, transparent);
+  }
 }
 
 .font-display {

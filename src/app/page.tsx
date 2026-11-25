@@ -43,16 +43,16 @@ export default function HomePage() {
         body="TenshiGeo is a geospatial studio for walking-access studies, heat and land-cover change, site screening, publication plates, and interactive web maps — with a fixed written fee before work starts."
         credit="Photo: Maximillian Conacher / Unsplash"
       >
-        <div className="flex flex-wrap gap-3">
+        <div className="flex w-full flex-col gap-3 sm:w-auto sm:flex-row sm:flex-wrap">
           <Link
             href="/request"
-            className="inline-flex items-center justify-center tg-link-on-dark rounded-full bg-teal-500 px-6 py-3 text-sm font-bold text-white hover:bg-teal-400"
+            className="tg-link-on-dark inline-flex w-full items-center justify-center rounded-full bg-teal-500 px-6 py-3.5 text-sm font-bold text-white hover:bg-teal-400 sm:w-auto sm:py-3"
           >
             Request a quote
           </Link>
           <Link
             href="/work"
-            className="inline-flex items-center justify-center rounded-full border border-white/40 bg-white/10 px-6 py-3 text-sm font-semibold text-white backdrop-blur-sm hover:border-white"
+            className="inline-flex w-full items-center justify-center rounded-full border border-white/40 bg-white/10 px-6 py-3.5 text-sm font-semibold text-white backdrop-blur-sm hover:border-white sm:w-auto sm:py-3"
           >
             See selected work
           </Link>
@@ -60,7 +60,7 @@ export default function HomePage() {
       </SceneryHero>
 
       <section className="border-b border-[var(--line)]">
-        <div className="mx-auto grid max-w-6xl gap-8 px-4 py-10 sm:grid-cols-3 sm:px-6">
+        <div className="mx-auto grid max-w-6xl gap-6 px-4 py-8 sm:grid-cols-3 sm:gap-8 sm:px-6 sm:py-10">
           <Proof
             title="Written scope first"
             body="Price and timeline on paper before any paid hour."
@@ -76,21 +76,24 @@ export default function HomePage() {
         </div>
       </section>
 
-      <section className="mx-auto max-w-6xl px-4 py-20 sm:px-6">
-        <div className="flex items-end justify-between gap-4">
-          <div>
+      <section className="mx-auto max-w-6xl px-4 py-14 sm:px-6 sm:py-20">
+        <div className="flex flex-col gap-3 sm:flex-row sm:items-end sm:justify-between sm:gap-4">
+          <div className="min-w-0">
             <p className="text-sm font-semibold uppercase tracking-wide text-sea">
               Selected work
             </p>
-            <h2 className="font-display mt-2 text-3xl font-bold text-ink sm:text-4xl">
+            <h2 className="font-display mt-2 text-2xl font-bold text-ink sm:text-3xl md:text-4xl">
               Outcomes, not mood boards
             </h2>
           </div>
-          <Link href="/work" className="text-sm font-bold text-sea">
+          <Link
+            href="/work"
+            className="shrink-0 text-sm font-bold text-sea"
+          >
             All work →
           </Link>
         </div>
-        <div className="mt-10 grid gap-6 lg:grid-cols-3">
+        <div className="mt-8 grid gap-5 sm:mt-10 sm:gap-6 lg:grid-cols-3">
           {featuredWork.map((c) => (
             <Link
               key={c.slug}
@@ -132,11 +135,11 @@ export default function HomePage() {
         body="Brief → written quote → draft while time remains → files you own. The process is the same whether you need one plate or a multi-city panel."
         credit="Photo via Unsplash"
       >
-        <ol className="grid w-full gap-4 sm:grid-cols-2 lg:w-auto lg:max-w-md lg:grid-cols-2">
+        <ol className="grid w-full gap-3 sm:grid-cols-2 sm:gap-4">
           {PROCESS.map((step) => (
             <li
               key={step.n}
-              className="rounded-xl border border-white/15 bg-white/10 p-4 backdrop-blur-sm"
+              className="rounded-xl border border-white/15 bg-white/10 p-3.5 backdrop-blur-sm sm:p-4"
             >
               <p className="font-display text-sm font-bold text-teal-300">
                 {step.n}
@@ -150,13 +153,13 @@ export default function HomePage() {
         </ol>
       </SceneryBand>
 
-      <section className="mx-auto max-w-6xl px-4 py-20 sm:px-6">
-        <div className="flex items-end justify-between gap-4">
-          <div>
+      <section className="mx-auto max-w-6xl px-4 py-14 sm:px-6 sm:py-20">
+        <div className="flex flex-col gap-3 sm:flex-row sm:items-end sm:justify-between sm:gap-4">
+          <div className="min-w-0">
             <p className="text-sm font-semibold uppercase tracking-wide text-sea">
               Services
             </p>
-            <h2 className="font-display mt-2 text-3xl font-bold text-ink sm:text-4xl">
+            <h2 className="font-display mt-2 text-2xl font-bold text-ink sm:text-3xl md:text-4xl">
               Packages with clear tiers
             </h2>
             <p className="mt-3 max-w-xl text-ink-soft">
@@ -164,11 +167,14 @@ export default function HomePage() {
               after your AOI is clear.
             </p>
           </div>
-          <Link href="/analysis" className="text-sm font-bold text-sea">
+          <Link
+            href="/analysis"
+            className="shrink-0 text-sm font-bold text-sea"
+          >
             All services →
           </Link>
         </div>
-        <div className="mt-10 grid gap-4 sm:grid-cols-2">
+        <div className="mt-8 grid gap-4 sm:mt-10 sm:grid-cols-2">
           {featuredServices.map((p) => (
             <Link
               key={p.slug}
@@ -197,7 +203,7 @@ export default function HomePage() {
           unoptimized
         />
         <div className="absolute inset-0 bg-slate-950/80" aria-hidden />
-        <div className="relative mx-auto grid max-w-6xl gap-12 px-4 py-20 sm:px-6 lg:grid-cols-2">
+        <div className="relative mx-auto grid max-w-6xl gap-10 px-4 py-14 sm:gap-12 sm:px-6 sm:py-20 lg:grid-cols-2">
           <div>
             <p className="text-sm font-semibold uppercase tracking-wide text-teal-300">
               About
@@ -250,9 +256,9 @@ export default function HomePage() {
         </div>
       </section>
 
-      <section className="mx-auto max-w-6xl px-4 py-20 sm:px-6">
-        <div className="overflow-hidden rounded-3xl border border-[var(--line)] bg-card shadow-sm sm:grid sm:grid-cols-2">
-          <div className="relative min-h-[220px] sm:min-h-full">
+      <section className="mx-auto max-w-6xl px-4 py-14 sm:px-6 sm:py-20">
+        <div className="overflow-hidden rounded-2xl border border-[var(--line)] bg-card shadow-sm sm:grid sm:grid-cols-2 sm:rounded-3xl">
+          <div className="relative min-h-[180px] sm:min-h-full">
             <Image
               src={asset("/scenery/green-hills.jpg")}
               alt="Green rolling hills under soft light"
@@ -262,8 +268,8 @@ export default function HomePage() {
               unoptimized
             />
           </div>
-          <div className="p-8 sm:p-12">
-            <h2 className="font-display text-3xl font-bold text-ink sm:text-4xl">
+          <div className="p-6 sm:p-10 md:p-12">
+            <h2 className="font-display text-2xl font-bold text-ink sm:text-3xl md:text-4xl">
               Tell me what you need mapped.
             </h2>
             <p className="mt-4 max-w-xl text-ink-soft">
@@ -272,7 +278,7 @@ export default function HomePage() {
             </p>
             <Link
               href="/request"
-              className="mt-8 inline-flex items-center justify-center tg-link-on-dark rounded-full bg-slate-950 px-6 py-3 text-sm font-bold text-white hover:opacity-90"
+              className="tg-link-on-dark mt-6 inline-flex w-full items-center justify-center rounded-full bg-slate-950 px-6 py-3.5 text-sm font-bold text-white hover:opacity-90 sm:mt-8 sm:w-auto sm:py-3"
             >
               Open the request box
             </Link>

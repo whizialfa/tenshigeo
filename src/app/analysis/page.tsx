@@ -19,8 +19,8 @@ export default function AnalysisIndexPage() {
         compact
       />
 
-      <div className="mx-auto max-w-6xl px-4 py-14 sm:px-6">
-        <div className="grid gap-5 lg:grid-cols-2">
+      <div className="mx-auto max-w-6xl px-4 py-10 sm:px-6 sm:py-14">
+        <div className="grid gap-4 sm:gap-5 lg:grid-cols-2">
           {ANALYSIS_PACKAGES.map((p) => (
             <Link
               key={p.slug}

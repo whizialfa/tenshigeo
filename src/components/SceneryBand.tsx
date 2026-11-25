@@ -33,15 +33,19 @@ export function SceneryBand({
         className="absolute inset-0 bg-slate-950/75"
         aria-hidden
       />
-      <div className="relative mx-auto flex max-w-6xl flex-col gap-6 px-4 py-16 sm:px-6 sm:py-20 lg:flex-row lg:items-end lg:justify-between">
+      <div className="relative mx-auto flex max-w-6xl flex-col gap-6 px-4 py-12 sm:gap-8 sm:px-6 sm:py-16 md:py-20 lg:flex-row lg:items-end lg:justify-between">
         <div className="max-w-xl">
-          <h2 className="font-display text-3xl font-bold text-white sm:text-4xl">
+          <h2 className="font-display text-2xl font-bold text-white sm:text-3xl md:text-4xl">
             {title}
           </h2>
-          <p className="mt-4 text-base leading-relaxed text-slate-200">{body}</p>
+          <p className="mt-3 text-[15px] leading-relaxed text-slate-200 sm:mt-4 sm:text-base">
+            {body}
+          </p>
           <p className="mt-4 text-[11px] text-slate-400">{credit}</p>
         </div>
-        {children}
+        {children ? (
+          <div className="min-w-0 w-full lg:w-auto lg:max-w-md">{children}</div>
+        ) : null}
       </div>
     </section>
   );

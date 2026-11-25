@@ -34,7 +34,12 @@ export function Footer() {
      <p className="mb-3 font-semibold text-sea-bright">Contact</p>
      <ul className="text-[#cbd5e1] space-y-2">
       <li>
-       <a href="mailto:wisdomakpabio27@gmail.com">wisdomakpabio27@gmail.com</a>
+       <a
+        href="mailto:wisdomakpabio27@gmail.com"
+        className="break-all"
+       >
+        wisdomakpabio27@gmail.com
+       </a>
       </li>
       <li>
        <a

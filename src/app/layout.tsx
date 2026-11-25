@@ -26,6 +26,16 @@ export const metadata: Metadata = {
     "Ready-made maps and tiered geospatial analysis. Custom quotes for access studies, earth observation, site suitability, publication plates, and web maps.",
 };
 
+export const viewport = {
+  width: "device-width",
+  initialScale: 1,
+  viewportFit: "cover" as const,
+  themeColor: [
+    { media: "(prefers-color-scheme: light)", color: "#f8fafc" },
+    { media: "(prefers-color-scheme: dark)", color: "#0f172a" },
+  ],
+};
+
 export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
     <html
@@ -40,10 +50,10 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
           }}
         />
       </head>
-      <body className="flex min-h-full flex-col font-sans text-[17px] leading-relaxed">
+      <body className="flex min-h-full flex-col overflow-x-clip font-sans text-[16px] leading-relaxed sm:text-[17px]">
         <Providers>
           <Header />
-          <main className="flex-1">{children}</main>
+          <main className="w-full min-w-0 flex-1">{children}</main>
           <Footer />
         </Providers>
       </body>

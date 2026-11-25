@@ -98,13 +98,13 @@ export function StudioEditor({ initial, priceUsd, productLabel }: Props) {
  };
 
  return (
-  <div className="mx-auto grid max-w-6xl gap-6 px-4 py-8 lg:grid-cols-[1.2fr_0.9fr] lg:px-6">
-   <div className="rounded-2xl border border-[var(--line)] bg-card shadow-sm overflow-hidden rounded-2xl">
-    <div className="flex items-center justify-between border-b border-[var(--line)] px-4 py-3">
+  <div className="mx-auto grid max-w-6xl gap-5 px-4 py-6 sm:gap-6 sm:py-8 lg:grid-cols-[1.2fr_0.9fr] lg:px-6">
+   <div className="overflow-hidden rounded-2xl border border-[var(--line)] bg-card shadow-sm">
+    <div className="flex items-center justify-between border-b border-[var(--line)] px-3 py-3 sm:px-4">
      <p className="text-sm font-semibold text-ink">Live artwork</p>
      <p className="text-xs text-ink-soft">Pan · zoom · rotate</p>
     </div>
-    <div className="h-[420px] sm:h-[560px]">
+    <div className="h-[min(58vw,320px)] sm:h-[420px] md:h-[560px]">
      {mapReady ? (
       <MapCanvas
        design={design}

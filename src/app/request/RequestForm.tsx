@@ -61,7 +61,10 @@ export function RequestForm({
  }
 
  return (
-  <form onSubmit={onSubmit} className="border border-[var(--line)] bg-card mt-8 space-y-4 rounded-2xl p-6">
+  <form
+   onSubmit={onSubmit}
+   className="mt-8 space-y-4 rounded-2xl border border-[var(--line)] bg-card p-4 sm:p-6"
+  >
    <label className="block text-xs font-semibold text-ink-soft">
     Your name
     <input
